@@ -64,8 +64,7 @@ void	check_label(t_c *p, t_cmd *c, int i)
 		c->label = p->tmp;
 		p->tmp = NULL;
 	}
-	c->number = i;
-	// printf("p->line = %s   c_name = %s\n", p->line, g_optab[i].c_name);
+	c->number = i - 1;
 	calc_codage(p, c);
 	validate_command(p, c, -1, k);
 }

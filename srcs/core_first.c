@@ -22,10 +22,10 @@ t_op	g_optab[17] =
 		"substraction", 1, 4},
 	{"and", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 6, 6,
 		"et (and  r1, r2, r3   r1&r2 -> r3", 1, 4},
-	{"or", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 7, 6,
-		"ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 4},
 	{"xor", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 8, 6,
 		"ou (xor  r1, r2, r3   r1^r2 -> r3", 1, 4},
+	{"or", 3, {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 4, 7, 6,
+		"ou  (or   r1, r2, r3   r1 | r2 -> r3", 1, 4},
 	{"zjmp", 1, {{0, 1, 1}, {0, 0, 0}, {0, 0, 0}}, 2, 9, 20,
 		"jump if zero", 0, 2},
 	{"ldi", 3, {{1, 1, 1}, {1, 1, 0}, {1, 0, 0}}, 2, 10, 25,
@@ -69,7 +69,6 @@ void	check_file_name(char *str, t_c *p)
 	tmp = p->f_name;
 	p->f_name = ft_strjoin(p->f_name, ".cor");
 	free(tmp);
-	// ft_printf("file name = %s\n", p->f_name);
 	start_reading(p, str);
 }
 

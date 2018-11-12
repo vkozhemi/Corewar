@@ -44,18 +44,29 @@ void	reverse(int fd, unsigned char *n, int count)
 		write(fd, n + count, 1);
 }
 
+void	writting_coomand(t_c *file, int fd)
+{
+	t_cmd	*lst;
+
+	lst = file->cmd_p;
+	while (lst)
+	{
+		lst->number++;
+		write(fd, &lst->number, 1);
+		(lst->number != 1 && lst->number != 9 && lst->number != 12 && lst->number != 15) ? reverse(fd, (unsigned char*)&lst->codage, 1) : 0;
+		while (lst->args)
+		{
+			(lst->args->size) ? reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size) : 0;
+			lst->args = lst->args->next;
+		}
+		lst = lst->next;
+	}
+}
+
 int		file_creator(t_c *file)
 {
 	int				fd;
 	unsigned int	magic;
-	t_cmd			*lst;
-
-	t_cmd *new = file->cmd_p;
-	while (new)
-	{
-		printf("cmd = %d cmd size = %d size before = %d\n", new->number, new->cmd_s, new->size_before);
-		new = new->next;
-	}
 	t_cmd			*lst_tmp;
 	
 	lst_tmp = file->cmd_p;
@@ -74,19 +85,7 @@ int		file_creator(t_c *file)
 	reverse(fd, (unsigned char*)&file->size, 4);
 	write(fd, &file->comment, COMMENT_LENGTH);
 	write(fd, &magic, 4);
-	lst = file->cmd_p;
-	while (lst)
-	{
-		lst->number++;
-		write(fd, &lst->number, 1);
-		(lst->number != 1 && lst->number != 9 && lst->number != 12 && lst->number != 15) ? reverse(fd, (unsigned char*)&lst->codage, 1) : 0;
-		while (lst->args)
-		{
-			(lst->args->size) ? reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size) : 0;
-			lst->args = lst->args->next;
-		}
-		lst = lst->next;
-	}
+	writting_coomand(file, fd);
 	close(fd);
-	return 1;
+	return (1);
 }

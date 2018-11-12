@@ -36,7 +36,7 @@ void	check_if_finish(t_c *p)
 	}
 }
 
-void	reading_map(t_c *p, int i, t_cmd *c) ////////
+void	reading_map(t_c *p, int i, t_cmd *c)
 {
 	char	*ptr;
 	char	*p2;
@@ -56,13 +56,9 @@ void	reading_map(t_c *p, int i, t_cmd *c) ////////
 		}
 		if (ft_strstr(p->line, g_optab[i].c_name))
 		{
-			// if (*(ft_strstr(p->line, g_optab[i].c_name) - 1) != ' ' && *(ft_strstr(p->line, g_optab[i].c_name) - 1) != '\n' && *(ft_strstr(p->line, g_optab[i].c_name) - 1) != '\t')
-			// 	continue ;
-			// if (*(ft_strstr(p->line, g_optab[i].c_name) - 1) != 'x')
-			// 	continue ;
 			if ((is_command_nolabel(p, i, 0)))
 			{
-				read_command(p, i, 0, c);
+				read_command(p, g_optab[i].op_code, 0, c);
 				break ;
 			}
 		}
@@ -98,7 +94,6 @@ void	start_reading(t_c *p, char *str)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		// ft_printf("line ---- %s\n", p->line);
 		if (p->line[0] == '#' || strstr(p->line, ".name"))
 			free(p->line);
 		else if (strstr(p->line, ".comment"))

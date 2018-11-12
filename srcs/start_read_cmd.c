@@ -14,17 +14,6 @@
 
 void	calc_codage_2(t_c *p, t_cmd *c, int *i)
 {
-	if (ft_isalpha(p->line[*i]))
-	{
-		while (p->line[*i] != ':')
-			(*i)--;
-		(*i)--;
-	}
-	else if (ft_isdigit(p->line[*i]) && (!ft_isalpha(p->line[*i - 1]) || p->line[*i - 1] == 'r'))
-	{
-		while (ft_isdigit(p->line[*i]) || p->line[*i] == '-')
-			(*i)--;
-	}
 	if (p->line[*i] == '%')
 	{
 		c->codage >>= 2;
@@ -57,8 +46,6 @@ void	calc_codage(t_c *p, t_cmd *c)
 	i = 0;
 	c->codage = 0;
 	c->cmd_s = 1;
-	if (ft_strstr(p->line, "ld"))
-		ft_printf("dbhhsj\n");
 	while (p->line[i] && p->line[i] != '#' && p->line[i] != ';')
 		i++;
 	i--;
@@ -67,6 +54,15 @@ void	calc_codage(t_c *p, t_cmd *c)
 	{
 		while (i >= 0 && (p->line[i] == ' ' || p->line[i] == '\t'))
 			i--;
+		if (ft_isalpha(p->line[i]))
+		{
+			while (p->line[i] != ':')
+				i--;
+			i--;
+		}
+		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1]) || p->line[i - 1] == 'r'))
+			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
+				i--;
 		calc_codage_2(p, c, &i);
 		i--;
 	}
@@ -86,8 +82,10 @@ int		is_command_nolabel(t_c *p, int i, int k)
 		|| *(ptr + ft_strlen(g_optab[i].c_name)) == ',')
 		return (0);
 	if (*(ptr + ft_strlen(g_optab[i].c_name)) != ' '
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '\t')
-		return (0);// zjmp!!!!!!
+		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '\t'
+		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '%'
+		&& *(ptr + ft_strlen(g_optab[i].c_name)) != 'r')
+		return (0);
 	ptr = ptr + ft_strlen(g_optab[i].c_name);
 	while (ptr[++k] )
 	{

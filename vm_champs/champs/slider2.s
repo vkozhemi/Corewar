@@ -33,7 +33,7 @@
 		sti	r1,%:live,%106
 		sti	r1,%:live,%111
 		sti	r1,%:live,%116
-		ld	%48,r14	
+		ld		%48,r14	
 		ld      %4,r4
 		ld      %48,r6
 		ld	%48,r13
@@ -56,7 +56,7 @@ leon_live:	live    %42
 		sti     r3,r8,r2
 		add     r2,r4,r2
 		xor     r13,r2,r7
-		zjmp    %415
+		zjmp%415
 		ld      %0,r15
 leon_ecrit:	zjmp    %:leon_live
 roger:		ld	%0,r10

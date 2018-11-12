@@ -118,6 +118,8 @@ void				new_function(t_c *p);
 /*
 ** write in file
 */
+t_cmd				*find_label(t_cmd *t, char *label);
+void				find_this_label(t_c *p, t_cmd *t, t_args *ar);
 void				find_label_instruct(t_c *p);
 void				count_comma(t_c *p, int j);
 int					if_not_cmd(char *ptr, t_c *p, int i, int k);
@@ -127,5 +129,7 @@ int					if_not_cmd(char *ptr, t_c *p, int i, int k);
 */
 int					comma_existing(t_c *p, int i);
 int					file_creator(t_c *file);
+void				writting_coomand(t_c *file, int fd);
+void				reverse(int fd, unsigned char *n, int count);
 
 #endif
