@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="vovan"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/vkozhemi/Corewar/vovan/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/vkozhemi/Corewar/vovan/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/vkozhemi/Corewar/vovan/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vovan">
+				<Option output="/Users/vkozhemi/Corewar/vovan/cmake-build-debug/vovan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vkozhemi/Corewar/vovan/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/vkozhemi/Corewar/vovan/inc"/>
+					<Add directory="/Users/vkozhemi/Corewar/vovan/libft/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 vovan"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="vovan/fast">
+				<Option output="/Users/vkozhemi/Corewar/vovan/cmake-build-debug/vovan" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/vkozhemi/Corewar/vovan/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/vkozhemi/Corewar/vovan/inc"/>
+					<Add directory="/Users/vkozhemi/Corewar/vovan/libft/includes"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 vovan/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/vkozhemi/Corewar/vovan/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/inc/core.h">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/inc/op.h">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/counters.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_atoi.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_atoi_ptr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_atointmxt.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_bzero.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_count_word.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isalnum.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isalpha.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isascii.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isdigit.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isprime.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_isprint.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_itoa.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstadd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstdel.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstdelone.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstiter.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstmap.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_lstnew.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memalloc.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memccpy.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memchr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memcmp.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memcpy.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memdel.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memmove.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_memset.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_nextprime.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_printf.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putchar.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putchar_fd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putendl.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putendl_fd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putnbr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putnbr_fd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putnstr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putstr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_putstr_fd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_range.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_splitdel.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strcat.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strchr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strclr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strcmp.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strcpy.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strdel.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strdup.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strequ.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_striter.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_striteri.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strjoin.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strlcat.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strlen.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strmap.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strmapi.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strncat.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strncmp.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strncpy.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strnequ.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strnew.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strnjoin.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strnstr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strrchr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strrev.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strsplit.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strstr.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strsub.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_strtrim.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_swap.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_tolower.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/ft_toupper.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/get_next_line.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/includes/libft.h">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/print_dc.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/print_puox.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/print_str.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/print_unicode.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/libft/prints.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/core_first.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/finish_validation.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/make_cmd_list.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/start_read_cmd.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/start_reading.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/start_write_infile.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/write_binary.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/write_bot_name.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/write_couple_arg.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/srcs/writing_labels.c">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/asm">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/42.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/42.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Backward.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Car.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Car.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Death.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Gagnant.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Octobre_Rouge_V4.2.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Octobre_Rouge_V4.2.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Survivor.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/Torpille.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/V3M.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/V3M.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/V3M2.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/V3M2.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/barriere.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/barriere.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/bguy/sam_2.0.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/bjacob/doge.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/brandazz/Rainbow_dash.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/cdivry/youforkmytralala.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/clafleur/big_feet.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/dcohen/loose.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/ekocevar/mandragore.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/esusseli/gedeon.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/evlasova/terminator.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/fcorre/ultimate-surrender.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gbir/_.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gjestin/salamahenagalabadoun.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gleger/Machine-gun.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gmange/corelol.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gpetrov/MarineKing.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/gudepard/Kappa.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/hmichals/Wall.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/hmoutaou/Misaka_Mikoto.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/kelickel/Varimathras.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/kmonrose/justin_bee.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/ldesgoui/_honeybadger.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/lseguin/skynet.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/lsirigna/live.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/mbacoux/meowluigi.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/mconraux/dubo.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/rabid-on/jinx.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/results.txt">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/rmasse/THUNDER.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/sbuono/Asombra.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/srabah-m/littlepuppy.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/tdemay/champ.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/vrey/darksasuke.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2014/ybouvet/casimir.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/adenis/Explosive_Kitty.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/agregoir/Kittystrophic.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/gnebie/ultima.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/iburel/gateau.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/jaustry/mise_a_jour_windows95.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/nolivier/run_Kitty_RUN.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/pzarmehr/overwatch.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/championships/2017/tbillard/Douceur_power.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/ex.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/ex.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/bee_gees.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/bee_gees.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/bigzork.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/bigzork.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/fluttershy.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/fluttershy.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/helltrain.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/helltrain.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/turtle.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/turtle.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/zork.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/examples/zork.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/jumper.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/jumper.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/lde.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/leeloo.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/mat.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/maxidef.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/maxidef.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/mortel.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/mortel.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/new.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/sebc.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/slider2.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/slider2.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/tdc2.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/tdc3.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/tdc4.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/toto.cor">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/champs/toto.s">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/vm_champs/corewar">
+			<Option target="vovan"/>
+		</Unit>
+		<Unit filename="/Users/vkozhemi/Corewar/vovan/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

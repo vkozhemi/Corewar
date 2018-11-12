@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vkozhemi/Corewar/vovan/inc/core.h
+../libft/includes/libft.h
+/Users/vkozhemi/Corewar/vovan/libft/includes/libft.h
+op.h
+/Users/vkozhemi/Corewar/vovan/inc/op.h
+fcntl.h
+-
+
+/Users/vkozhemi/Corewar/vovan/inc/op.h
+
+/Users/vkozhemi/Corewar/vovan/libft/includes/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+fcntl.h
+-
+stdarg.h
+-
+
+/Users/vkozhemi/Corewar/vovan/srcs/start_read_cmd.c
+../inc/core.h
+/Users/vkozhemi/Corewar/vovan/inc/core.h
+
