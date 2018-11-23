@@ -18,6 +18,8 @@ int		if_not_cmd(char *ptr, t_c *p, int i, int k)
 
 	while (ft_isalnum(ptr[k]) || ptr[k] == '_')
 		k++;
+	if (k == 0)
+		return (0);
 	if (ptr[k] == ':')
 	{
 		p->checker2 = 10;
@@ -30,8 +32,10 @@ int		if_not_cmd(char *ptr, t_c *p, int i, int k)
 	return (0);
 }
 
-void	count_comma(t_c *p, int j)
+void	count_comma(t_c *p, int j, char *ptr)
 {
+	int res;
+
 	while (p->line[++j])
 	{
 		if (p->line[j] == ',')
@@ -39,6 +43,9 @@ void	count_comma(t_c *p, int j)
 		if (p->line[j] == ',' && p->line[j + 1] == ',')
 			error(8);
 	}
+	res = count_commands(ptr);
+	if ((p->counter + 1) != res)
+		error2(14);
 }
 
 t_cmd	*find_label(t_cmd *t, char *label)
@@ -64,14 +71,21 @@ t_cmd	*find_label(t_cmd *t, char *label)
 void	find_this_label(t_c *p, t_cmd *t, t_args *ar)
 {
 	t_cmd			*temp;
-	unsigned int	res;
-	t_label			*tl;
 
 	if (!(temp = find_label(p->cmd_p, ar->label)))
-		error2(15);
-	res = temp->size_before - t->size_before;
-	printf("label = %s. temp->number = %d temp->size_before = %d this->size_before = %d\n", ar->label,temp->number, temp->size_before, t->size_before);
-	ar->ar_n = res;
+	{
+		if (p->tmp && !ft_strcmp(ar->label, p->tmp->label))
+		{
+			temp = p->cmd_p;
+			while (temp->next)
+				temp = temp->next;
+			ar->ar_n = temp->size_before + temp->cmd_s - t->size_before;
+			return ;
+		}
+		else
+			error2(15);
+	}
+	ar->ar_n = temp->size_before - t->size_before;
 }
 
 void	find_label_instruct(t_c *p)

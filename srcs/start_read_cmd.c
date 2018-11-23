@@ -12,60 +12,33 @@
 
 #include "../inc/core.h"
 
-void	calc_codage_2(t_c *p, t_cmd *c, int *i)
+void	symbols_before_cmd(t_c *p, char *ptr)
 {
-	if (p->line[*i] == '%')
-	{
-		c->codage >>= 2;
-		c->cmd_s += g_optab[c->number].l_size;
-		c->codage += 128;
-		while (p->line[*i] != ',' && *i >= 0)
-			(*i)--;
-	}
-	else if (p->line[*i] == 'r' && ++c->cmd_s)
-	{
-		c->codage >>= 2;
-		c->codage += 64;
-		while (p->line[*i] != ',' && *i >= 0)
-			(*i)--;
-	}
-	else if (p->line[*i] == ',' || p->line[*i] == ' ' || p->line[*i] == '\t')
-	{
-		c->codage >>= 2;
-		c->cmd_s += 2;
-		c->codage += 192;
-		while (p->line[*i] != ',' && *i >= 0)
-			(*i)--;
-	}
-}
+	int		m;
+	char	*s;
 
-void	calc_codage(t_c *p, t_cmd *c)
-{
-	int i;
-
-	i = 0;
-	c->codage = 0;
-	c->cmd_s = 1;
-	while (p->line[i] && p->line[i] != '#' && p->line[i] != ';')
-		i++;
-	i--;
-	c->cmd_s += g_optab[c->number].codage;
-	while (i >= 0)
-	{
-		while (i >= 0 && (p->line[i] == ' ' || p->line[i] == '\t'))
-			i--;
-		if (ft_isalpha(p->line[i]))
+	m = 0;
+	s = ft_strchr(p->line, ':');
+	if (s && s < ptr && ++m)
+		while (s + m != ptr)
 		{
-			while (p->line[i] != ':')
-				i--;
-			i--;
+			if (s[m] != ' ' && s[m] != '\t')
+			{
+				ft_printf("%s\n", p->line);
+				error(9);
+			}
+			m++;
 		}
-		else if (ft_isdigit(p->line[i]) && (!ft_isalpha(p->line[i - 1]) || p->line[i - 1] == 'r'))
-			while (ft_isdigit(p->line[i]) || p->line[i] == '-')
-				i--;
-		calc_codage_2(p, c, &i);
-		i--;
-	}
+	else
+		while (p->line + m != ptr)
+		{
+			if (p->line[m] != ' ' && p->line[m] != '\t')
+			{
+				ft_printf("%s\n", p->line);
+				error(9);
+			}
+			m++;
+		}
 }
 
 int		is_command_nolabel(t_c *p, int i, int k)
@@ -81,13 +54,10 @@ int		is_command_nolabel(t_c *p, int i, int k)
 	if (*(ptr + ft_strlen(g_optab[i].c_name)) == '\0'
 		|| *(ptr + ft_strlen(g_optab[i].c_name)) == ',')
 		return (0);
-	if (*(ptr + ft_strlen(g_optab[i].c_name)) != ' '
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '\t'
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != '%'
-		&& *(ptr + ft_strlen(g_optab[i].c_name)) != 'r')
+	if (!ft_strchr(" \t%r", *(ptr + ft_strlen(g_optab[i].c_name))))
 		return (0);
 	ptr = ptr + ft_strlen(g_optab[i].c_name);
-	while (ptr[++k] )
+	while (ptr[++k])
 	{
 		if (ptr[k] == '\0' || ptr[k] == ',')
 			return (0);
@@ -99,16 +69,11 @@ int		is_command_nolabel(t_c *p, int i, int k)
 
 int		check_point(t_c *p, int k, int c)
 {
-	char *ptr;
-	char *ptr2;
-
 	while (p->line[k] != '.')
 		k++;
-	if (!(ptr = ft_strchr(p->line, '#')))
+	if (!ft_strchr(p->line, '#') && !ft_strchr(p->line, ';'))
 		return (0);
-	if (!(ptr2 = ft_strchr(p->line, ';')))
-		return (0);
-	while (p->line[c] != '#' || p->line[c] != ';')
+	while (p->line[c] != '#' && p->line[c] != ';')
 		c++;
 	if (k < c)
 		return (0);
@@ -118,6 +83,7 @@ int		check_point(t_c *p, int k, int c)
 
 void	read_command(t_c *p, int i, int k, t_cmd *cmd)
 {
+	symbols_before_cmd(p, ft_strstr(p->line, g_optab[i].c_name));
 	if (!p->cmd_p)
 	{
 		cmd = (t_cmd *)malloc(sizeof(t_cmd));

@@ -26,7 +26,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC)
 	@ gcc $(FLAGS) -c $(SRC) -I $(HDR)
 	@ ar rc $(NAME) $(OBJ)
 

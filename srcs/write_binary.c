@@ -12,6 +12,17 @@
 
 #include "../inc/core.h"
 
+void	split_del(char **string)
+{
+	int i;
+
+	i = -1;
+	while (string[++i])
+		if (string[i])
+			free(string[i]);
+	free(string);
+}
+
 int		comma_existing(t_c *p, int i)
 {
 	while (p->line[i])
@@ -47,17 +58,22 @@ void	reverse(int fd, unsigned char *n, int count)
 void	writting_coomand(t_c *file, int fd)
 {
 	t_cmd	*lst;
+	t_args	*arg_tmp;
 
 	lst = file->cmd_p;
 	while (lst)
 	{
 		lst->number++;
 		write(fd, &lst->number, 1);
-		(lst->number != 1 && lst->number != 9 && lst->number != 12 && lst->number != 15) ? reverse(fd, (unsigned char*)&lst->codage, 1) : 0;
-		while (lst->args)
+		if (lst->number != 1 && lst->number != 9
+			&& lst->number != 12 && lst->number != 15)
+			reverse(fd, (unsigned char*)&lst->codage, 1);
+		arg_tmp = lst->args;
+		while (arg_tmp)
 		{
-			(lst->args->size) ? reverse(fd, (unsigned char*)&lst->args->ar_n, lst->args->size) : 0;
-			lst->args = lst->args->next;
+			if (arg_tmp->size)
+				reverse(fd, (unsigned char*)&arg_tmp->ar_n, arg_tmp->size);
+			arg_tmp = arg_tmp->next;
 		}
 		lst = lst->next;
 	}
@@ -68,7 +84,7 @@ int		file_creator(t_c *file)
 	int				fd;
 	unsigned int	magic;
 	t_cmd			*lst_tmp;
-	
+
 	lst_tmp = file->cmd_p;
 	file->size = 0;
 	while (lst_tmp)

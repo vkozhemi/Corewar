@@ -95,6 +95,6 @@ typedef struct					s_op
 	int							l_size;
 }								t_op;
 
-t_op							g_optab[17];
+t_op							g_optab[20];
 
 #endif

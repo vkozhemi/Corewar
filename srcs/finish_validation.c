@@ -26,7 +26,7 @@ void	write_arg_label(char *string, int i, t_cmd *c, t_args *t)
 	while (string[j] && string[j] != '#' && string[j] != ';')
 	{
 		if (string[j] != ' ' && string[j] != '\t')
-			error(13);
+			error2(13);
 		j++;
 	}
 	j = c->char_c;
@@ -57,13 +57,13 @@ void	check_t_ind(char **string, int i, t_cmd *c, t_args *t)
 {
 	if (i == 0)
 		if (!g_optab[c->number].args.arg1[2])
-			error(12);
+			error2(12);
 	if (i == 1)
 		if (!g_optab[c->number].args.arg2[2])
-			error(12);
+			error2(12);
 	if (i == 2)
 		if (!g_optab[c->number].args.arg3[2])
-			error(12);
+			error2(12);
 	if (string[i][c->char_c] == ':')
 	{
 		write_arg_label(string[i], 1, c, t);
@@ -80,24 +80,40 @@ void	error2(int i)
 	else if (i == 13)
 		ft_printf("%s\n", "Wrong label string");
 	else if (i == 14)
-		ft_printf("%s\n", "Error to much comma in string");
+		ft_printf("%s\n", "Error too much or too less comma in string");
 	else if (i == 15)
 		ft_printf("%s\n", "Error: no such label");
+	else if (i == 16)
+		ft_printf("%s\n", "Too many names or comments in file");
+	else if (i == 17)
+		ft_printf("%s\n", "Wrong string with name");
+	else if (i == 18)
+		ft_printf("%s\n", "Wrong label in argument");
+	else if (i == 19)
+		ft_printf("%s\n", "Too much or too less arguments");
+	else if (i == 20)
+		ft_printf("%s\n", "Expected [\"]");
+	else if (i == 21)
+		ft_printf("%s\n", "Syntax error at token [TOKEN][005:001] ENDLINE");
+	else if (i == 22)
+		ft_printf("%s\n", "No command");
+	exit(0);
 }
 
 void	new_function(t_c *p)
 {
-	t_cmd 			*point;
+	t_cmd			*point;
 	unsigned int	temp;
 
 	point = p->cmd_p;
 	temp = 0;
+	if (!point)
+		error2(22);
 	while (point)
 	{
 		point->size_before = temp;
 		temp += point->cmd_s;
 		point = point->next;
 	}
-	ft_printf("Finalochka\n");
 	find_label_instruct(p);
 }

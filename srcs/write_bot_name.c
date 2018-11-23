@@ -17,17 +17,19 @@ void	write_comment_cont(t_c *p, int i, int count, int tmp)
 	int j;
 
 	j = 0;
-	while (p->file[++tmp] != '\"')
+	while (p->file[tmp] && p->file[tmp] != '\0' && p->file[tmp] != '\"')
+	{
+		tmp++;
 		count++;
+	}
 	if (count > 2048)
 		error(5);
-	while (p->file[++i] != '\"')
+	while (p->file[++i] != '\0' && p->file[i] != '\"')
 	{
 		p->comment[j] = p->file[i];
 		j++;
 	}
 	p->comment[j] = '\0';
-	// ft_printf("comment = %s\n", p->comment);
 }
 
 void	write_comment(t_c *p)
@@ -53,7 +55,7 @@ void	write_comment(t_c *p)
 	}
 	if (p->flag != 69)
 		error(4);
-	while (p->file[i] != '\"')
+	while (p->file[i] && p->file[i] != '\"')
 		i++;
 	tmp = i;
 	write_comment_cont(p, i, count, tmp);
@@ -65,35 +67,31 @@ void	write_name_cont(t_c *p, int i, int count, int tmp)
 	char	*needle;
 
 	j = 0;
-	while (p->file[i] != '\"')
+	while (p->file[i] && p->file[i] != '\"')
 		i++;
-	while (p->file[++tmp] != '\"')
+	tmp = i;
+	while (p->file[++tmp] && p->file[tmp] != '\"')
 		count++;
 	if (count > 128)
 		error(3);
 	ft_bzero(p->player_n, 128);
 	ft_bzero(p->comment, 2048);
-	while (p->file[++i] != '\"')
+	while (p->file[++i] && p->file[i] != '\"')
 	{
 		p->player_n[j] = p->file[i];
 		j++;
 	}
 	p->player_n[j] = '\0';
-	// ft_printf("p->player_n = %s\n", p->player_n);
 	if ((needle = ft_strstr(p->file, ".comment")))
 		write_comment(p);
 	else
 		error(4);
 }
 
-void	write_bot_name(t_c *p, int i)
+void	write_bot_name(t_c *p, int i, int count, int tmp)
 {
-	int		count;
-	int		tmp;
 	char	*needle;
 
-	tmp = 0;
-	count = 0;
 	if ((needle = ft_strstr(p->file, ".name")))
 	{
 		while (p->file[i])
@@ -109,6 +107,7 @@ void	write_bot_name(t_c *p, int i)
 		}
 		if (p->flag != 42)
 			error(2);
+		validate_name(p, i);
 		write_name_cont(p, i, count, tmp);
 	}
 	else
@@ -139,7 +138,5 @@ void	error(int i)
 		ft_printf("%s\n", "Wrong file name");
 	else if (i == 11)
 		ft_printf("%s\n", "Wrong command argument");
-	else if (i > 11)
-		error2(i);
 	exit(0);
 }

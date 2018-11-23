@@ -19,7 +19,9 @@ void	one_arg_ind(t_args *arg, t_cmd *c, char *p)
 	else if (*(p + 1) != ':')
 	{
 		if (!g_optab[c->number].args.arg1[1])
-			error(12);
+			error2(12);
+		if (p[1] != '-' && !(ft_isalnum(p[1])))
+			error2(18);
 		arg->ar_n = ft_atoi(p + 1);
 		arg->size = g_optab[c->number].l_size;
 		arg->label = NULL;
@@ -28,43 +30,40 @@ void	one_arg_ind(t_args *arg, t_cmd *c, char *p)
 		write_arg_label1(p + 2, c, arg, 0);
 }
 
-void	write_one_arg(char *ptr, t_cmd *c)
+void	write_one_arg(char *ptr, t_cmd *c, t_args *arg)
 {
-	t_args *arg;
-
 	arg = (t_args *)malloc(sizeof(t_args));
 	arg->number = 1;
 	arg->next = NULL;
 	c->args = arg;
-	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
 	while (*ptr == ' ' || *ptr == '\t')
-	 	ptr++;
+		ptr++;
 	if (*ptr == '-' || ft_isdigit(*ptr))
 	{
-		if (!g_optab[c->number].args.arg1[1])
-			error(12);
+		if (!g_optab[c->number].args.arg1[2])
+			error2(12);
 		arg->ar_n = ft_atoi(ptr);
 		arg->size = 2;
 	}
 	else if (*ptr == 'r')
 	{
 		if (!g_optab[c->number].args.arg1[0])
-			error(12);
+			error2(12);
 		arg->ar_n = ft_atoi(ptr + 1);
+		arg->label = NULL;
 		arg->size = 1;
 	}
 	else if (*ptr == '%' || *ptr == ':')
 		one_arg_ind(arg, c, ptr);
+	else
+		error(7);
 }
 
-void	validate_command(t_c *p, t_cmd *c, int j, int k) /////////////////////////?????
+void	validate_command(t_c *p, t_cmd *c, int j, int k)
 {
 	char	*ptr;
 	char	**string;
-	int		i;
 
-	i = 0;
-	p->counter = 0;
 	ptr = ft_strstr(p->line, g_optab[c->number].c_name);
 	if (p->checker2 == 42)
 	{
@@ -74,15 +73,18 @@ void	validate_command(t_c *p, t_cmd *c, int j, int k) /////////////////////////?
 	}
 	if (!comma_existing(p, 0))
 	{
-		write_one_arg(ptr, c);
+		check_cm_instring(p, -1);
+		ptr = ptr + ft_strlen(g_optab[c->number].c_name);
+		write_one_arg(ptr, c, NULL);
 		return ;
 	}
-	count_comma(p, j);
 	ptr = ptr + ft_strlen(g_optab[c->number].c_name);
+	count_comma(p, j, ptr);
 	while (*ptr == ' ' || *ptr == '\t')
-	 	ptr++;
+		ptr++;
 	string = ft_strsplit(ptr, ',');
-	start_search_signs(p, string, i, c);
+	start_search_signs(string, 0, c);
+	split_del(string);
 }
 
 void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
@@ -92,16 +94,16 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 	j = i;
 	while (p->line[j] != ':')
 		j++;
+	if (j == 0)
+		error(9);
 	new->label = (char *)malloc(sizeof(char) * (j + 1));
 	j = 0;
 	while (p->line[i] != ':')
 	{
 		if (ft_isalnum(p->line[i]) || p->line[i] == '_')
-			new->label[j] = p->line[i];
+			new->label[j++] = p->line[i++];
 		else
 			error(10);
-		i++;
-		j++;
 	}
 	new->label[j] = '\0';
 	if (p->tmp)
@@ -111,7 +113,6 @@ void	write_label_str(t_c *p, t_cmd *c, t_label *new, int i)
 	}
 	else
 		c->label = new;
-	//ft_printf("c->label === %s\n", c->label->label);
 }
 
 void	write_label(t_c *p, t_cmd *c)

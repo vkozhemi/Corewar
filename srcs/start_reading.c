@@ -3,53 +3,79 @@
 /*                                                        :::      ::::::::   */
 /*   start_reading.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkorniie <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vkozhemi <vkozhemi@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 11:54:22 by vkorniie          #+#    #+#             */
-/*   Updated: 2018/11/07 11:54:24 by vkorniie         ###   ########.fr       */
+/*   Created: 2018/11/23 15:37:12 by vkozhemi          #+#    #+#             */
+/*   Updated: 2018/11/23 15:37:16 by vkozhemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/core.h"
 
-void	check_if_finish(t_c *p)
+void	check_next_comment_line(t_c *p, char *ptr, int *i)
 {
-	int i;
-	int c;
+	int gnl;
 
-	i = -1;
-	c = 0;
-	while (p->line[++i])
-		if (p->line[i] == '\"')
-			c++;
-	if (c == 2)
-		free(p->line);
-	else
+	if (ptr[(*i)++] != '\"')
 	{
 		free(p->line);
-		while (get_next_line(p->fd, &(p->line)))
+		while ((gnl = get_next_line(p->fd, &(p->line))) > 0)
 		{
-			if ((p->c = ft_strchr(p->line, '\"')))
+			if (p->line && (p->c = ft_strchr(p->line, '\"')))
+			{
+				ptr = ft_strchr(p->line, '\"');
+				*i = 1;
 				break ;
+			}
 			free(p->line);
 		}
+		if (gnl == 0)
+			error2(20);
 	}
+	while (ptr[*i] && ptr[*i] != ';' && ptr[*i] != '#')
+	{
+		if (ptr[*i] != '\t' && ptr[*i] != ' ')
+			error2(20);
+		(*i)++;
+	}
+}
+
+void	check_if_finish(t_c *p, char *ptr, int comment)
+{
+	int				i;
+	static int		lm = 0;
+
+	if (++lm > 2)
+		error2(16);
+	i = 0;
+	while (p->line + i != ptr)
+	{
+		if (p->line[i] != ' ' && p->line[i] != '\t')
+			error(8);
+		i++;
+	}
+	i = (comment == 1) ? 8 : 5;
+	while (ptr[i] == ' ' || ptr[i] == '\t')
+		i++;
+	if (ptr[i++] != '\"')
+		error(8);
+	while (ptr[i] && ptr[i] != '\"')
+		i++;
+	check_next_comment_line(p, ptr, &i);
 }
 
 void	reading_map(t_c *p, int i, t_cmd *c)
 {
-	char	*ptr;
-	char	*p2;
-
-	if ((ptr = ft_strchr(p->line, '.')))
+	if (ft_strchr(p->line, '.'))
 		if (!check_point(p, 0, 0))
 			error(7);
-	while (++i < 17)
+	i = 19;
+	while (--i >= -1)
 	{
 		p->checker2 = 0;
-		if (i == 16 && !(p2 = ft_strchr(p->line, ':')))
+		if (i == -1 && !ft_strchr(p->line, ':'))
 			error(6);
-		if (i == 16 && (p2 = ft_strchr(p->line, ':')))
+		if (i == -1 && ft_strchr(p->line, ':'))
 		{
 			start_label(p, 0);
 			break ;
@@ -58,7 +84,7 @@ void	reading_map(t_c *p, int i, t_cmd *c)
 		{
 			if ((is_command_nolabel(p, i, 0)))
 			{
-				read_command(p, g_optab[i].op_code, 0, c);
+				read_command(p, i, 0, c);
 				break ;
 			}
 		}
@@ -84,42 +110,29 @@ int		empty_string(t_c *p, int i)
 		return (0);
 }
 
-void	start_reading(t_c *p, char *str)
+void	start_reading(t_c *p, char *str, t_cmd *cmd)
 {
-	t_cmd	*cmd;
-
-	cmd = NULL;
 	p->fd = open(str, O_RDONLY);
 	if (p->fd < 0)
 		error(1);
 	while (get_next_line(p->fd, &(p->line)) > 0)
 	{
-		if (p->line[0] == '#' || strstr(p->line, ".name"))
+		if (p->line[0] == '#')
 			free(p->line);
 		else if (strstr(p->line, ".comment"))
-			check_if_finish(p);
+			check_if_finish(p, strstr(p->line, ".comment"), 1);
+		else if (strstr(p->line, ".name"))
+			check_if_finish(p, strstr(p->line, ".name"), 0);
 		else if (!ft_strcmp(p->line, ""))
 			free(p->line);
 		else if (empty_string(p, 0))
 			free(p->line);
 		else
 		{
+			put_zero(p);
 			reading_map(p, -1, cmd);
 			free(p->line);
 		}
 	}
 	new_function(p);
-}
-
-int		is_comment(t_c *p, int i)
-{
-	while (i != -1)
-	{
-		if (p->file[i] == '\n')
-			break ;
-		if (p->file[i] == '#' || p->file[i] == ';')
-			return (0);
-		i--;
-	}
-	return (1);
 }
