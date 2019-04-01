@@ -46,7 +46,7 @@ There are more nuances to the game that I don’t cover. The best way to learn a
 Open your terminal and make it full-screen, copy paste the below, and hit enter.
 
 ```shell
-git clone https://github.com/vkozhemi/Corewar.git ; cd Core-War ; make ; ./corewar -visual player1.cor player2.cor player3.cor player4.cor
+git clone https://github.com/vkozhemi/Corewar.git ; cd Corewar ; make ; ./corewar -visual player1.cor player2.cor player3.cor player4.cor
 ```
 Once the cycle to die reaches 0, it will announce a winner. Then you can press any key to leave the program.
 
